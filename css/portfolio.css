@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/metropolis-2');
+body {
+    font-family:"Merriweather Sans";
+    font-size: 18px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+b.grey {
+    background-color: rgb(255 255 255 / 70%) ;
+
+}
+.text-grey {
+    color: rgb(255 255 255 / 70%);
+    transition: 0.3s;
+}
+
+.text-grey-nav {
+    color: rgb(255 255 255 / 70%);
+    transition: 0.3s;
+}
+
+.text-grey-nav:hover {
+    color: rgb(255, 255, 255);
+}
+
+.text-white {
+    color: rgb(255 255 255);
+}
+
+.b-orange {
+    background-color: #f4623a;
+}
+
+.btn-orange {
+    background-color: #f4623a;
+    border: #f4623a;
+    transition: 0.2s;
+}
+
+.btn-orange:hover {
+    background-color: #bf5639;
+ }
+
+.benner {
+    background: linear-gradient(to bottom, rgb(63 61 59 / 60%) 0%, rgb(92 77 66 / 52%) 100%), url(../image/71A645B5-FC93-4103-90E7-E1A5E6AC9C64.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+ .border-benner {
+    height: 3px;
+    width: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left:auto ;
+    margin-right:auto ;
+    margin-top:30px ;
+    margin-bottom: 30px;
+    background-color: #f4623a;
+ }
+
+ .padding-offer {
+    padding-top:90px ;
+    padding-bottom:90px ;
+}
+
+.border-offer {
+    height: 3px;
+    width: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left:auto ;
+    margin-right:auto ;
+    margin-top:30px ;
+    margin-bottom: 30px;
+    background-color: rgb(255 255 255);
+ }
+
+ .offer-image {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    object-fit: cover;
+    transform: scale(1);
+    transition: .5s;
+ }
+
+
+.Service {
+    margin-bottom: 100px;
+}   
+
+.img-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+
+.performance-bg {
+    height: 300px;
+    background-size: cover;
+    transition: .5s;
+    position: relative;
+}
+
+.backdrop {
+    position: absolute;
+    background-color: rgb(244 98 58 / 90%);
+    opacity: 0;
+    transition: .5s;
+    height: 300px;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    display: flex;
+
+}
+
+.performance-bg:hover .backdrop {
+    opacity: 1;
+}
+
+.backdrop div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.margin-none {
+    margin: none;
+}
+
+.percent-skill {
+    background-color: rgb(33 37 41);
+}
+
+.padding-percent-skill {
+    padding-top:100px ;
+    padding-bottom:130px ;
+}
+
+.footer-p {
+    padding: 50px 30px 30px;
+    background-color:rgb(248 249 250);
+}
+
+.typed-cursor {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.nav-a {
+    border-bottom:3px rgb(255, 255, 255) ;
+    padding-left: 0px;
+    padding-bottom: 0px !important;
+    padding-right: 0px !important;
+}
+
+.menu {
+    text-decoration: none;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+}
+
+.menu div {
+    position: relative;
+}
+
+.menu span:after {
+    content:' ' ;
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    display: block;
+    background-color: rgb(255, 255, 255)  ;
+    bottom: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.menu:hover span:after{
+    width: 100%;
+}
+
+.bar {
+    position: relative;
+    background-color:rgb(174, 174, 174) ;
+    width: 100%;
+    height: 10px;
+    background-size: cover;
+}
+
+.bar div {
+    background-color: rgb(244 98 58 / 90%);
+    position: absolute;
+    height: 10px;
+    display: block;
+}
+
+.button-up {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(244 98 58 / 90%);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 20px;
+    bottom: 20px;
+    transition: .5s;
+    box-shadow: 2px 2px 3px rgb(92, 92, 92);
+}
+
+.white-arrow {
+    color: rgb(255 255 255);
+    transition: .5s;
+}
+
+.button-up:hover {
+    background-color: black;
+}
+
+.button-up:hover .white-arrow {
+    color: rgb(244 98 58 / 90%);
+}
+
+.a-b-none {
+    text-decoration: none;
+}
+
+.w-h-map {
+    width: 100%;
+    height: 700px;
+}
