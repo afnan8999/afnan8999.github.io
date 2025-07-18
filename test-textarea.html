@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 offset-4 mt-5">
+                <div class="card">
+                    <h4 class="card-header bg-primary text-light">Test textarea</h4>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2 offset-1 mt-auto">
+                                <labe class="" for="my-text">Text:</labe>
+                            </div>
+                            <div class="col-8">
+                                <textarea class= "p-3 form-control" cols="1" rows="4" id="textarea1" onkeyup="key_textarea()" maxlength="50"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 offset-1 mt-2 text-end">
+                                <span class="me-2">Char count:</span><span id="result"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 offset-4">
+                                <div class="offset-1 col-1 mt-3">
+                                        <button class="btn btn-primary text-light px-4 mb-2 mb-3" onclick="resetclick()" type="button">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/test-textarea.js"></script>
+</body>
+</html>

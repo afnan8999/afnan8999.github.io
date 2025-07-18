@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center my-5">
+                <h2>Income-outcome</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="offset-1 col-1">
+                <label for="my-text">Detail:</label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="text" id="income1">
+            </div>
+            <div class="offset-1 col-1">
+                <label for="my-number">Amount:</label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="number" id="income2">
+            </div>
+            <div class="col-2 ms-5">
+                <button type="button" class="btn btn-primary px-4" onclick="income_outcome('income')">Income</button>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="offset-1 col-1">
+                <label for="my-text">Detail:</label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="text" id="outcome1">
+            </div>
+            <div class="offset-1 col-1">
+                <label for="my-number">Amount:</label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="number" id="outcome2">
+            </div>
+            <div class="col-2 ms-5">
+                <button type="button" class="btn btn-danger px-3" onclick="income_outcome('outcome')">Outcome</button>
+            </div>
+        </div>
+    </div>
+    <div class="no">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table border="1" width="50%" align="center" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">action</th>
+                                <th class="text-center">No.</th>
+                                <th class="text-center">Detail</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody align="center" id="table-body">
+
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-warning">
+                                <td class="text-center">Total</td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center"><span id="total">0</span></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="edit-income" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Income-Outcome</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="offset-1 col-4">
+                            <label for="my-detail">Detail:</label>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" type="text" id="my-detail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset-1 col-4">
+                                <label for="my-amount">Amount:</label>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" type="number" id="my-amount">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="edit_save()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/locale/cdn.min.js"></script>
+    <script src="js/income-outcome.js"></script>
+</body>
+
+</html>

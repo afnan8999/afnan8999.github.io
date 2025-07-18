@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        .chat {
+            right: 10px;
+            bottom: 80px;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-4 col-4 text-center mx-auto p-3">
+                <img width="125px" height="125px" src="image/profile.png" alt="profile">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-4 col-4">
+                <div class="card shadow-sm">
+                    <h5 class="card-header bg-primary text-light p-3">Register</h5>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="offset-1 col-4">
+                                <label for="my-e-mail">E-mail:</label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control" type="text" id="my-e-mail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="offset-1 col-4">
+                                <label for="my-password">password:</label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control" type="password" id="my-password">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="offset-1 col-4">
+                                <label for="my-name">Name:</label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control"  type="text" id="my-name">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12 text-center">
+                                <input type="checkbox" id="my-checkbox">
+                                <label for="my-checkbox">Click to agree term of use:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="position-absolute bottom-1 end-0 start-1 rounded-circle bg-primary chat">
+            <img width="100%" alt="..." src="image/comment (1).png">
+        </div>
+        <div class="row bg-primary p-2 position-absolute bottom-0 end-0 start-0">
+            <div class="col-12 text-center text-light">
+                    <h6>Copyright by .......</h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

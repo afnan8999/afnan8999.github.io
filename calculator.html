@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <title>Document</title>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            </style>
+        </head>
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4 offset-4 mt-5">
+                        <div class="card">
+                            <h4 class="card-header bg-primary text-light">Calculator</h4>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="offset-1 col-3"><label for="my-number1">Number1:</label></div>
+                                    <div class="col-7">
+                                        <input class="form-control" type="number" id="my-number1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="offset-1 col-3"><label for="my-number2">Number2:</label></div>
+                                    <div class="col-7">
+                                        <input class="form-control" type="number" id="my-number2">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="offset-1 col-1">
+                                        <button class="btn btn-primary text-light px-4 mb-2 mb-3" type="button" onclick="buttonClick('+')">+</button>
+                                    </div>
+                                    <div class="offset-1 col-1">
+                                        <button class="btn btn-primary text-light px-4 mb-2 mb-3" type="button" onclick="buttonClick('-')">-</button>
+                                    </div>
+                                    <div class="offset-1 col-1">
+                                        <button class="btn btn-primary text-light px-4 mb-2 mb-3" type="button" onclick="buttonClick('*')">*</button>
+                                    </div>
+                                    <div class="offset-1 col-1">
+                                        <button class="btn btn-primary text-light px-4 mb-2 mb-3" type="button" onclick="buttonClick('/')">/</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="offset-1 col-10">
+                                        <span class="fw-bold me-2">Result:</span><span id="result"></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function buttonClick(operator) {
+                    let number1Element = document.getElementById("my-number1");
+                    let number2Element = document.getElementById("my-number2");
+                    let resultElement = document.getElementById("result");
+                
+                    // check empty input 
+                    if(number1Element.value == '' || number2Element.value == '') {
+                        alert("กรุณาใส่ตัวเลขก่อนครับ");
+                    }
+                    else {
+                        if (operator == '+') { // true
+                        let result = Number(number1Element.value) + Number(number2Element.value);
+                         resultElement.innerText = result;
+                        }
+                        else if (operator == '-') {
+                            let result = Number(number1Element.value) - Number(number2Element.value);
+                            resultElement.innerText = result;
+                        }
+                        else if (operator == '*') {
+                            let result = Number(number1Element.value) * Number(number2Element.value);
+                            resultElement.innerText = result;
+                        }
+                        else if (operator == '/') {
+                            let result = Number(number1Element.value) / Number(number2Element.value);
+                            resultElement.innerText = result;
+                        }
+                        else { // false
+                            console.log("error")
+                        }
+                    }
+                   
+                
+                    
+                }
+            </script>
+        </body>
+    </html>

@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+            .line {
+                margin-bottom: 14px;
+            }
+
+            .card {
+                border: 1px solid #d9dbdf;
+                width: 30%;
+                border-radius: 7px;
+                box-shadow: 3px 3px 5px #c8cacd;
+            }
+
+            .card-header {
+                border-bottom: 1px solid #d9dbdf;
+                margin-bottom: 14px;
+                background-color: rgb(0, 157, 255);
+                padding: 16px;
+                text-align: left;
+                color: #fff;
+                border-radius: 7px 7px 0 0;
+            }   
+            .card-title {
+                margin: 0;
+            }
+
+            .card-content {
+                margin-left: 21%;
+                text-align: left;
+            }
+
+            .custom-label {
+                width: 80px;
+                display: inline-block;
+            }
+
+            .custom-input {
+                padding: 4px;
+                border-radius: 6px;
+                border: 1px solid #d9dbdf;
+            }
+
+            .blue-btn {
+                border: none;
+                border-radius: 5px;
+                padding: 6px;
+                width: 150px;
+                background-color:  rgb(0, 157, 255);
+                font-size: 14px;
+                font-weight: bold;
+                color: #fff;
+                transition: all .3s;
+            }
+
+            .blue-btn:hover {
+                background-color: rgb(62, 180, 254);
+                /*width: 170px;*/
+                /*transform: rotate(180deg);*/
+                transform: scale(1.1);
+                /*transform: translateX(20px);*/
+            }
+
+            .footer {
+                color: #fff;
+                border: 1px solid #d9dbdf;
+                background-color: rgb(0, 157, 255);
+                font-size: 12px;
+                padding: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .logo {
+                /*border: 1px solid black;*/
+                transition: all .5s;
+                border-radius: 50%;
+            }
+
+            .logo:hover {
+                box-shadow:3px 3px 5px #c8cacd;
+            }
+            
+            .chat {
+                padding: 8px;
+                width: 40px;
+                height: 40px;
+                transition: .5s;
+                background-color:  rgb(0, 157, 255);
+                border-radius: 50%;
+                position: absolute;
+                bottom: 80px;
+                right: 10px;
+                cursor: pointer;
+
+            }
+
+            .chat:hover {
+                background-color: rgb(94, 186, 243);
+                transform: scale(1.1);
+            }
+            body {
+                font-family:"Roboto Condensed";
+            }
+
+            input, button {
+                font-family:"Roboto Condensed";
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <center>
+            <div class="line">
+                 <!-- Media tag -->
+                <img class="logo" width="125px" height="125px"src="image/profile.png" ait="profile">
+            </div>
+
+            <div class="card">
+                <div class="card-header" >
+                    <!-- Text tag -->
+                    <h2 class="card-title">Register</h2>
+                </div>
+
+                <!-- input tag -->
+                <form action="#">
+                    <div class="line card-content">
+                        <label class="custom-label" for="my-e-mail">E-mail: </label>
+                        <input class="custom-input" type="text" id="my-e-mail">
+                    </div>
+
+                    <div class="line card-content">
+                        <label class="custom-label" for="my-password">password: </label>
+                        <input class="custom-input" type="password" id="my-password">
+                    </div>
+
+                    <div class="line card-content">
+                        <label class="custom-label" for="my-name">Name: </label>
+                        <input class="custom-input" type="text" id="my-name">
+                    </div>
+
+                    <div class="line">
+                        <input type="checkbox" id="my-checkbox">
+                        <label for="my-checkbox">Click to agree term of use: </label>
+                    </div>
+
+                    <div class="line">
+                        <button class="blue-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="chat">
+                <img width="35px" height="35px" src="image/comment (1).png">
+            </div>
+            <!-- Text tag -->
+            <div class="footer">
+                <h3>Copyright by .......</h3>
+            </div>
+        </center>
+    </body>
+</html>

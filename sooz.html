@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: "Prompt";
+            font-size: 18px;
+        }
+
+        .text-grey {
+            color: #808080;
+        }
+
+        .font-small {
+            font-size: 16.8px;
+        }
+
+        .padding {
+            padding: 180px 30px 120px;
+        }
+
+        .margin-top {
+            margin-top: 200px;
+        }
+
+        .margin {
+            margin: 0px;
+        }
+
+        .diary-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diary-img {
+            height: 400px;
+            width: 100%;
+            transform: scale(1);
+            transition: .5s;
+        }
+
+        .diary-card:hover .diary-img {
+            transform: scale(1.1);
+        }
+
+        .backdrop {
+            position: absolute;
+            z-index: 2;
+            background-color: #0000007a;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+            /*transform: scale(0);*/
+            opacity: 0;
+            transition: .5s;
+
+        }
+
+        .diary-card:hover .backdrop {
+            opacity: 1;
+            /*transform: scale(1);*/
+        }
+
+        .backdrop p {
+            transform: translateY(150%);
+            transition: .5s;
+        }
+
+        .diary-card:hover .backdrop p {
+            transform: translateY(0%);
+        }
+
+        .cardo {
+            font-family: "Cardo";
+        }
+
+        .inter {
+            font-family: "Inter";
+        }
+
+        .benner {
+            background-image: url(image/building-exterior-2-22-1024x480.webp);
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-color: #ffffff96;
+        }
+
+        nav .active {
+            border-bottom: 1px solid black;
+            padding-bottom: 0px;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+        .gallery-img {
+            height: 305px;
+            width: 100%;
+            object-fit: cover;
+            transform: scale(1);
+            transition: .5s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(0.9);
+        }
+
+        .our-services-img {
+            width: 305px;
+            height: 305px;
+        }
+
+        .ceo {
+            background-color: #111111;
+        }
+
+        .contact-form {
+            background-color: #f9f9f9;
+        }
+
+        .img-contact-us {
+            width: 100%;
+            height: 403.56px;
+            background-size: cover;
+        }
+
+        .link-sooz{
+            
+            transform: scale(1);
+            transition: .5s;
+        }
+
+        .link-sooz:hover {
+            transform: scale(1);
+        }
+
+        .img-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .social-link {
+            text-decoration: none;
+            transition: all .3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-link div {
+            position: relative;
+        }
+
+        .social-link span:after {
+            content: ' ';
+            position: absolute;
+            height: 2px;
+            width: 0%;
+            display: block;
+            background-color: #000;
+            bottom: 0;
+            left: 0;
+            transition: all .3s;
+        }
+
+        .social-link:hover span:after {
+            width: 100%;
+        }
+
+        .footer-p {
+            padding: 80px 30px 7px;
+        }
+
+        .font-smaller {
+            font-size: 12px;
+        }
+
+        .footer-m {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-bottom: 30px;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg position-absolute top-0 end-0 start-0">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="me-3" width="59px" height="59px" src="image/logo2-square.webp">
+                <span class="fs-4">SOOZ Architect</span>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark me-3" href="#">Portfolios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark me-3" aria-current="page" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark me-3" aria-current="page" href="#">SOOZ Diary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark me-3" aria-current="page" href="#">About SOOZ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark me-3" aria-current="page" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner section -->
+    <section class="benner">
+        <div class="container-fluid h-100 ">
+            <div class="row h-100 d-flex align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="cardo margintop fw-bold">CREATE A DREAM SPACE</h2>
+                    <p class="inter margin">Design and consult every need through different thought process </p>
+                    <p class="inter">Combined with innovation and suitable for reality</p>
+                    <button type="button" class="btn btn-dark inter ">CONTACT US</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="diary padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 cardo mb-5">
+                    <h1>SOOZ DIARY</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="diary-card">
+                        <div class="backdrop">
+                            <p class="text-light">ลองใช้ 5 เทคนิคนี้ รับรองว่าบ้านของคุณจะดูกว้างขึ้นอย่างน่าทึ่ง!</p>
+                        </div>
+                        <img class="diary-img" src="image/5-technic-expand-your-house.webp">
+                    </div>
+                    <h3 class="mt-3">บอกลาบ้านแคบๆ ด้วย 5 เทคนิคง่ายๆ</h3>
+                </div>
+                <div class="col-4">
+                    <div class="diary-card">
+                        <div class="backdrop">
+                            <p class="text-light">ผลงานตกแต่งภายในชิ้นนี้ แล้วเสร็จเมื่อ ปี 2017 เริ่มจากทางคุณจอย
+                                เป็นคนที่ใช้เวลาว่างส่วนมากในชีวิตอยู่กับห้องนอน โจทย์แรกที่ทางเราได้รับคือการ
+                                ขยายต่อเติมบ้านชั้น 2 ออกมาเพื่อให้ห้องนอนเดิมมีพื้นที่ใช้สอยเพิ่มเติมมากขึ้น</p>
+                        </div>
+                        <img class="diary-img" src="image/joy-resident-decoration-7.webp">
+                    </div>
+                    <h3 class="mt-3">Joy Resident Decoration</h3>
+                </div>
+                <div class="col-4">
+                    <div class="diary-card">
+                        <div class="backdrop">
+                            <p class="text-light">ผลงานรีโนเวตอาคารนี้ คือ ที่ตั้งใหม่ของบริษัทสูซอาร์คิเทคนั่นเอง
+                                โดยเริ่มจากสถานที่ตั้งเดิมของเราเริ่มคับแคบเนื่องจากมีบุคคลากรในบริษัทเพิ่มมากขึ้น
+                                และด้วยความที่มีคนรู้จักแนะนำอาคารพาณิชย์เก่าๆ ราคาย่อมเยาว์ให้
+                                ทางทีมเลยตัดสินใจรีโนเวตอาคารนี้เป็น ที่ตั้งบริษัทใหม่ของเราภาพแสดง
+                                สภาพอาคารก่อนรีโนเวตอาคาร</p>
+                        </div>
+                        <img class="diary-img" src="image/sirintorn7-office-renovation-1.webp">
+                    </div>
+                    <h3 class="mt-3">Sirintorn7 Office Renovation</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5 cardo">
+                    <h1>Gallery</h1>
+                </div>
+            </div>
+
+            <ul class="nav nav-pills mb-5 d-flex justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 active ms-2 me-2" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#commercial" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Commercial</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 ms-2 me-2" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#residential" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Residential</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 ms-2 me-2" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#renovetion" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Renovetion</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 ms-2 me-2" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#interior" type="button" role="tab" aria-controls="pills-disabled"
+                        aria-selected="false">Interior</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 ms-2 me-2" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#project-housing" type="button" role="tab" aria-controls="pills-disabled"
+                        aria-selected="false">Project Housing</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark px-3 py-2 ms-2 me-2" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#other" type="button" role="tab" aria-controls="pills-disabled"
+                        aria-selected="false">Other</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="commercial" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img mb-4" src="image/01entrance01-2.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img mb-4" src="image/01bedroom29p01-01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01clubhouseratc01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/02view07.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/03tive01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/08coffeeshop-01.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="residential" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img  mb-4" src="image/02peakhouse02-1536x1024.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/02sucharthouse-03.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/ele01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/thanyahouse02.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/02ubolext01-01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/exterior-all-1.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="renovetion" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img  mb-4" src="image/03tive01 (1).webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01fuuhouse02-2.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/fb-tive.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/liv_1.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/08coffeeshop-01 (1).webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="interior" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img  mb-4" src="image/02peakhouse02-1536x1024.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/02sucharthouse-03.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01bedroom29p01-01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01fl01-08.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01fuuhouse02-2.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01entrance02.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/fb-tive.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/04santibedroom01-01.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="project-housing" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img mb-4" src="image/01entrance01-2.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/01clubhouseratc01.webp">
+                        </div>
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/02view07.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="gallery-img" src="image/06centerroom02.webp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <section class="our-services">
+        <div class="container margin-top">
+            <div class="row">
+                <div class="col-12 cardo mb-5">
+                    <h1>Our services</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <img class="our-services-img me-1 mb-4" src="image/1.webp">
+                    <h4 class="cardo">House Design</h4> 
+                    <h6 class="inter">Tailor-made house designs that reflect your personal style and functional needs</h6>
+                </div>
+                <div class="col-3">
+                    <img class="our-services-img me-1 mb-4" src="image/2.webp">
+                    <h4 class="cardo">Interior Design</h4>
+                    <h6>Revitalize your space with our expert renovation services that promise minimal disruption and maximal enhancement</h6>
+                </div>
+                <div class="col-3">
+                    <img class="our-services-img me-1 mb-4" src="image/3.webp">
+                    <h4 class="cardo">Renovation Projects</h4>
+                    <h6 class="inter">Revitalize your space with our expert renovation services that promise minimal disruption and maximal enhancement.</h6>
+                </div>
+                <div class="col-3">
+                    <img class="our-services-img me-1 mb-4" src="image/4.webp">
+                    <h4 class="cardo">Construction Services</h4>
+                    <h6 class="inter">Comprehensive construction services ensuring your project is built to the highest standards, from inception to completion.</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ceo margin-top">
+        <div class="container-fluid h-100">
+            <div class="row">
+                <div class="col-12 text-center pt-5 pb-5 text-light">
+                    <h2 class="cardo fst-italic fw-bold">“SOOZ Architect has transformed the way we</h2>
+                    <h2 class="cardo fst-italic fw-bold">approach living spaces, unveiling groundbreaking</h2>
+                    <h2 class="cardo fst-italic fw-bold">design perspectives and efficinencies that have far</h2>
+                    <h2 class="cardo fst-italic fw-bold">exceeded our expectations”</h2>
+                    <div class="col-12 text-center pt-5 pb-5 text-light">
+                        <img src="image/krittin-sirahirunkorn.webp">
+                        <h6 class="mt-3 inter mb-1">Krittin Sirahirunkorn</h6>
+                        <h6 class="text-grey inter">CEO, SOOZ ARCHITECT</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-us padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 contact-form p-4">
+                    <h3>ขอใบเสนอราคา</h3>
+                    <div class="mb-3">
+                        <label class="mb-2" for="my-name">
+                            Name
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input class="form-control" type="text" id="my-name">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label class="mb-2" for="my-email-address">
+                            Email Address
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input class="form-control" type="text" id="my-email-address">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <labe class="mb-2" for="my-phone">
+                            Phone
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input class="form-control" type="number" id="my-Phone">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label class="mb-2" for="my-occupation">Occupation</label>
+                        <input class="form-control" type="text" id="my-occupation">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <p class="font-small mb-2">Project Type</p>
+                        <input class="form-check-input" type="radio" id="my-residential" name="project-type">
+                        <label class="form-check-label" for="my-residential">Residential</label>
+                        <input class="form-check-input" type="radio" id="my-commercial" name="project-type">
+                        <label class="form-check-label" for="my-commercial">Commercial</label>
+                        <input class="form-check-input" type="radio" id="my-renovation" name="project-type">
+                        <label class="form-check-label" for="my-renovation">Renovation</label>
+                        <input class="form-check-input" type="radio" id="my-interior" name="project-type">
+                        <label class="form-check-label" for="my-interior">Interior</label>
+                        <input class="form-check-input" type="radio" id="my-project-housing" name="project-type">
+                        <label class="form-check-label" for="my-project-housing">Project Housing</label>
+                        <input class="form-check-input" type="radio" id="my-other" name="project-type">
+                        <label class="form-check-label" for="my-other">Other</label>
+                    </div>
+                    <div>
+                        <label class="mb-2" for="my-message">
+                            Message
+                            <span class="text-danger">*</span>
+                        </label>
+                        <textarea class="p-3 form-control mb-4" cols="50" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <button type="button" class="btn btn-dark rounded-1 px-3 mt-5 mb-4">Submit</button>
+                    </div>
+                </div>
+                <div class="col-6 ps-5">
+                    <h1>*</h1>
+                    <h1 class="cardo mb-4">Contact Us</h1>
+                    <h4>เวลาทำการ</h4>
+                    <p class="mb-0 fs-6">จันทร์-ศุกร์ 8.00น.-18.00น</p>
+                    <p class="fs-6 mb-4">เสาร์ 8.00-13.00น</p>
+                    <h4>ช่องทางติดต่อ</h4>
+                    <div class="link-sooz">
+                        <div class="mb-1">
+                            <a class="text-dark social-link" href="https://www.facebook.com/sooz.Architect">
+                                <i class="fa-brands fa-facebook-f img-icon me-2"></i>
+                                <div>
+                                    <span class="fs-6">SoozArchitect</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mb-1">
+                            <a class="text-dark social-link" href="https://www.instagram.com/sooz.architect/#">
+                                <i class="fa-brands fa-instagram img-icon me-2"></i>
+                                <div>
+                                    <span class="fs-6">sooz.architect</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mb-1">
+                            <a class="text-dark social-link" href="https://line.me/R/ti/p/@746avmjf?oat_content=url">
+                                <i class="fa-brands fa-line img-icon me-2"></i>
+                                <div>
+                                    <span class="fs-6">SoozArchitect</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mb-1">
+                            <a class="text-dark social-link" href="#">
+                                <i class="fa-regular fa-envelope img-icon me-2"></i>
+                                <div>
+                                    <span class="fs-6"sooz.architect@gmail.com>sooz.architect@gmail.com</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mb-1">
+                            <a class="text-dark social-link" href="#">
+                                <i class="fa-solid fa-phone img-icon me-2"></i>
+                                <div>
+                                    <span class="fs-6">065-895-4151</span>
+                                </div>
+                            </a>
+                        </div>
+                        <img class="img-contact-us mt-5" src="image/v1.webp">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-form footer-p">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-6">
+                    <img width="59px" height="59px" src="image/logo2-square.webp">
+                    <h4>SOOZ Architect</h4>
+                    <span>“DESIGN THE BETTER LIFE”</span>
+                </div>
+                <div class="col-6">
+                    <a class="text-dark social-link justify-content-end" href="#">
+                        <div>
+                            <span>Home</span>
+                        </div>
+                    </a>
+                    <a class="text-dark social-link justify-content-end" href="#">
+                        <div>
+                            <span>Projects</span>
+                        </div>
+                    </a>
+                    <a class="text-dark social-link justify-content-end" href="#">
+                        <div>
+                            <span>SOOZ Diary</span>
+                        </div>
+                    </a>
+                    <a class="text-dark social-link justify-content-end" href="#">
+                        <div>
+                            <span>About SOOZ</span>
+                        </div>
+                    </a>
+                    <a class="text-dark social-link justify-content-end" href="#">
+                        <div>
+                            <span>Contact Us</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row border-top border-dark">
+                <div class="col-6 mt-2 text-end">
+                        <span class="font-smaller">Webdesign by</span>
+                        <a class="text-dark font-smaller text-dark" href="#">CAREDigital</a>
+                </div>
+                <div class="col-6 mt-2 border-start border-dark">
+                    <span class="font-smaller">Copyright 2025 © SOOZ Architect – All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/ece20d7312.js" crossorigin="anonymous"></script>
+</body>
+</html>

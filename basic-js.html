@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basic JS</h1>
+    <script>
+        console.log("Hello");
+        //alert("Wowww!!!!");
+        //confirm("Are you sure??");
+
+        /*
+            Data type
+            1. number
+            2. string
+            3. boolean 
+            4. HTMLElement
+            4. array
+            5. object
+
+            Operator
+
+            1. Number
+                - +
+                - -
+                - *
+                - /
+                - ** (power)
+                - % (mod)
+
+            2. string
+                - +
+                - *
+
+            3. boolean
+                - && (and)
+                - || (or)
+                - ! (not)
+        */
+
+        let x = 5;
+        let y = 2;
+        let name = "Aungkoon";
+        let greeting = "Hello "+name+"!!!";
+        let pass_exam = true; // boolean 
+        let result = x/y;
+        let result2 = x%y;
+
+        console.log("result = "+result);
+        console.log("result2 = "+result2);
+        console.log(greeting);
+
+        console.log(pass_exam && true);
+        console.log(pass_exam && false);
+        console.log(pass_exam || true);
+        console.log(pass_exam || false);
+        console.log(false || false);
+        console.log(!pass_exam);
+        
+        /*
+            Compare operator
+            - ==
+            - !=
+            - >=
+            - >
+            - <=
+            - <
+        */
+
+        let test = 10;
+        
+        if(test > 10) { // true
+            console.log("My test > 10");
+        }
+        else if(test == 10) {
+            console.log("My test = 10");
+        }
+        else { // false
+            console.log("My test < 10");
+        }
+        
+        //Loop
+        for(let i=0; i<5; i++) { // i = 0,1,2,3,4 (start; stop condition; step)
+            no = console.log("Hi");
+        }
+
+        let scores = [80, 67, 94, 73, 66, 69]; // array
+        let names = ["Aungkoon", "John", "June", "James", "Jane", "Kitty "]
+        scores[2] = 84; // edit data by index
+        console.log("index 2 = "+scores[2]); // get data by index
+
+        scores.push(99); // add new data
+        console.log(scores);
+
+        console.log("length of scores = "+scores.length); //
+
+        for(let i=0; i<scores.length; i++) {
+            console.log("index "+i+" = "+scores[i]);
+        }
+
+
+
+        let scores2 = [67, 45, 67, 89, 23];
+        let person_array = ['Aungkoon', 'Kongpet', 32, 'Male'];
+        let person = {firstname: 'Aungkoon', lastname: 'Kongpet', age: 32, gender: 'Male'};// key: value
+        
+        let person_list = [
+            {firstname: 'Aungkoon', lastname: 'Kongpet', age: 32, gender: 'Male'},
+            {firstname: 'John', lastname: 'Doe', age: 27, gender: 'Male'},
+            {firstname: 'June', lastname: 'Homes', age: 24, gender: 'Female'},
+        ]
+
+        console.log(person["firstname"]);
+        console.log(person["gender"]);
+
+        console.log(person_list[0]["firstname"]);
+
+        for(let i=0; i<person_list.length; i++) {
+            console.log(person_list[i]["firstname"]);
+        }
+
+        console.log(person_list);
+        /*person_list.splice(1, 1);*/
+        person_list[1]["age"] = 34;
+        person_list[1]["firstname"] = "David";
+        console.log(person_list);
+        
+        
+    
+
+
+        
+        
+    
+        
+
+        
+        
+    </script>
+</body>
+</html>
