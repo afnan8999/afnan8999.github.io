@@ -242,3 +242,7 @@ b.grey {
     width: 100%;
     height: 700px;
 }
+
+.img-center {
+    align-items: center;
+}
