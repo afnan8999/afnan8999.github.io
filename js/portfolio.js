@@ -1,5 +1,5 @@
 var typed = new Typed('#benner-prefix1', {
-      strings: ['Your Favorite Place for Free<br>Bootstrap Themes'],
+      strings: ['Welcome to my portfolio'],
       typeSpeed: 50,
       loop: true,
       backSpeed: 40,
